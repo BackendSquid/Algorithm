@@ -20,9 +20,15 @@ EX) [Dynaminc_Programming] - [KnapSock] - [Roach] - [README.md]
 
 ## Commit Convension
 
-- 풀이유형(축약 글자): [싸이트] 작성자 - 문제이름
-  - EX ) DP: [프로그래머스] Roach - 크레인 인형 뽑기
-  - EX ) BFS: [백준] Roach - 우편함 찾기
+- 풀이유형(축약 글자): [ISSUE_NUM] 작성자 - 문제이름
+  - EX ) DP: [#1] Roach - 크레인 인형 뽑기
+  - EX ) BFS: [#3] Roach - 우편함 찾기
+
+## ISSUE Conventsion
+
+- [싸이트] 작성자 - 문제이름
+
+- EX ) [프로그래머스] Roach - 크레인 인형 뽑기
 
 ## 진행방식
 
@@ -30,4 +36,5 @@ EX) [Dynaminc_Programming] - [KnapSock] - [Roach] - [README.md]
 - 10 ~ 20분 내지로 해당 Topic 에 대해서 짧은 발표를 한다.
 - 해당 Topic 과 관련된 문제를 한문제 풀이한다.
 - 4명이 되는 인원이 모두 끝마치면 스터디를 종료한다.
+- 스터디 종료 후 자신이 설명해온 문제를 ISSUE 로 시킨다.
 - 스터디 종료 후 다음 주차까지 다른 사람이 발표했던 유형의 문제를 풀어보고 정리한다.
