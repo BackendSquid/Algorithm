@@ -1,5 +1,5 @@
 > remote: Permission to AlgorithmSqaud/Algorithm.git denied to sanhee. <BR>
-> [GitHub 문제](https://recoveryman.tistory.com/392)를 오늘(04/21(수)) 해결해서 과제제출이 늦어졌습니다.
+> [GitHub 문제](https://recoveryman.tistory.com/392)를 오늘(04/21(수)) 해결해서 과제제출이 늦어졌습니다. 
 
 ## 소개
 
