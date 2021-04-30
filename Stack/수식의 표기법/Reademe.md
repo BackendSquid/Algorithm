@@ -69,70 +69,64 @@
 ## 코드 작성
 
 ```java
-👻import java.io.*;
-import java.util.Stack;
-
 public class Main {
-    public static void main(String[] args) throws IOException {
 
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int N = Integer.parseInt(br.readLine());
-        String postfix = br.readLine();
-        char[] arrayPostfix = postfix.toCharArray();
+        char[] input = br.readLine().toCharArray();
 
-        Double[] value = new Double[N];
-        for (int n = 0; n < N; n++) {
-            value[n] = Double.parseDouble(br.readLine());
+        double[] values = new double[N];
+
+        for (int i = 0; i < values.length; i++) {
+            values[i] = Double.parseDouble(br.readLine());
         }
 
-
         Stack<Double> stack = new Stack<>();
-        int cnt = 0;
-        for (int i = 0; i < arrayPostfix.length; i++) {
-            if (Character.isAlphabetic(arrayPostfix[i])) {
+        double result = 0.0;
 
-                if(N == 1){
-                    stack.push(value[0]);
-                }else {
-                    stack.push(value[cnt]);
+        for (char c : input) {
+            if (Character.isAlphabetic(c)) {
+                stack.push(values[(c - 65)]);  // 유니코드 A: 65
+            } else {
+                if (stack.size() > 1) {
+
+                    double operand1 = stack.pop();
+                    double operand2 = stack.pop();
+
+                    switch (c) {
+
+                        case '+':
+                            stack.push((operand2 + operand1));
+                            break;
+                        case '-':
+                            stack.push(operand2 - operand1);
+                            break;
+                        case '*':
+                            stack.push(operand2 * operand1);
+                            break;
+                        case '/':
+                            stack.push(operand2 / operand1);
+                            break;
+
+                    }
                 }
-                cnt++;
-            } else if (stack.size() > 1) {
-                char operator = arrayPostfix[i];
-                double operand2 = stack.pop();
-                double operand1 = stack.pop();
 
-                stack.push(calculator(operand1, operator, operand2));
             }
         }
 
-        while (!stack.isEmpty()) {
-            bw.write(String.format("%.2f", stack.pop()));
+        if(!stack.isEmpty()) {
+            bw.write(String.format("%.2f",stack.pop()));
         }
 
         bw.flush();
     }
 
-    public static Double calculator(double operand1, char operator, double operand2) {
-
-        switch (operator) {
-            case '+':
-                return operand1 + operand2;
-            case '-':
-                return operand1 - operand2;
-            case '*':
-                return operand1 * operand2;
-            case '/':
-                return operand1 / operand2;
-        }
-        return 0.0;
-    }
 }
-```
 
-https://bellossimo.tistory.com/28
+```
 
 ----
 
