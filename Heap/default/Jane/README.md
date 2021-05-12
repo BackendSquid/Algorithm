@@ -28,6 +28,7 @@
 
 ![image](https://user-images.githubusercontent.com/68000537/117963024-d82a2000-b35a-11eb-9c7d-3d37f929bded.png)
 
+* 그림은 아직 힙 아님! (heap property violated)
 
 
 ## 힙 vs 이진 탐색 트리
