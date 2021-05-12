@@ -119,85 +119,80 @@
 ## 구현
 
 ```java
-class Heap {
-  public static int heapSize = 10;
+    public static int heapSize = 10;
 
-  public static int getRightChild(int A[], int index) {
-    if((((2*index)+1) < A.length && (index >= 1)))
-      return (2*index)+1;
-    return -1;
-  }
-
-  public static int getLeftChild(int A[], int index) {
-      if(((2*index) < A.length && (index >= 1)))
-          return 2*index;
-      return -1;
-  }
-
-  public static int getParent(int A[], int index) {
-    if ((index > 1) && (index < A.length)) {
-      return index/2;
-    }
-    return -1;
-  }
-
-  public static void maxHeapify(int A[], int index) {
-    int leftChildIndex = getLeftChild(A, index);
-    int rightChildIndex = getRightChild(A, index);
-
-    // finding largest among index, left child and right child
-    int largest = index;
-
-    if ((leftChildIndex <= heapSize) && (leftChildIndex > 0)) {
-      if (A[leftChildIndex] > A[largest]) {
-        largest = leftChildIndex;
-      }
+    public static int getRightChild(int A[], int index) {
+        if ((((2 * index) + 1) < A.length && (index >= 1)))
+            return (2 * index) + 1;
+        return -1;
     }
 
-    if ((rightChildIndex <= heapSize && (rightChildIndex > 0))) {
-      if (A[rightChildIndex] > A[largest]) {
-        largest = rightChildIndex;
-      }
+    public static int getLeftChild(int A[], int index) {
+        if (((2 * index) < A.length && (index >= 1)))
+            return 2 * index;
+        return -1;
     }
 
-    // largest is not the node, node is not a heap
-    if (largest != index) {
-      int temp;
-      // swapping
-      temp = A[largest];
-      A[largest] = A[index];
-      A[index] = temp;
-      maxHeapify(A, largest);
+    public static int getParent(int A[], int index) {
+        if ((index > 1) && (index < A.length)) {
+            return index / 2;
+        }
+        return -1;
     }
-  }
 
-  public static void buildMaxHeap(int A[]) {
-    int i;
-    for(i=heapSize/2; i>=1; i--) {
-      maxHeapify(A, i);
-    }
-  }
+    public static void maxHeapify(int A[], int index) {
+        int leftChildIndex = getLeftChild(A, index);
+        int rightChildIndex = getRightChild(A, index);
 
-  public static void heapSort(int a[]) {
-    while (heapSize > 0) {
-      int temp;
-      temp = a[1];
-      a[1] = a[heapSize];
-      a[heapSize] = temp;
-      heapSize--;
-      maxHeapify(a, 1);
-    }
-  }
+        int largest = index;
 
-  public static void main(String[] args) {
-    int A[] = {0, 15, 20, 7, 9, 5, 8, 6, 10, 2, 1}; // 트리는 인덱스 1에서 시작
-    buildMaxHeap(A);
-    heapSort(A);
-    for(int i=1; i<=10; i++) {
-      System.out.println(A[i]);
+        if ((leftChildIndex <= heapSize) && (leftChildIndex > 0)) {
+            if (A[leftChildIndex] > A[largest]) {
+                largest = leftChildIndex;
+            }
+        }
+
+        if ((rightChildIndex <= heapSize && (rightChildIndex > 0))) {
+            if (A[rightChildIndex] > A[largest]) {
+                largest = rightChildIndex;
+            }
+        }
+
+        if (largest != index) {
+            int temp;
+            temp = A[largest];
+            A[largest] = A[index];
+            A[index] = temp;
+            maxHeapify(A, largest);
+        }
     }
-  }
-}
+
+    public static void buildMaxHeap(int A[]) {
+        int i;
+        for (i = heapSize / 2; i >= 1; i--) {
+            maxHeapify(A, i);
+        }
+    }
+
+    public static void heapSort(int a[]) {
+        while (heapSize > 0) {
+            int temp;
+            temp = a[1];
+            a[1] = a[heapSize];
+            a[heapSize] = temp;
+            heapSize--;
+            maxHeapify(a, 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int A[] = {0, 15, 20, 7, 9, 5, 8, 6, 10, 2, 1}; // 트리는 인덱스 1에서 시작
+        buildMaxHeap(A);
+        heapSort(A);
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(A[i]);
+        }
+    }
 ```
 
 
@@ -311,6 +306,12 @@ After heap sort: [9, 8, 7, 6, 5, 3, 1, 0]
 ## 실전 문제
 
 - [프로그래머스 디스크 컨트롤러](https://programmers.co.kr/learn/courses/30/lessons/42627?language=java)
+1. jobs 배열을 요청 시간에 따라 오름차순으로 정렬
+2. 모든 요청이 처리될 때까지 (while)
+  - 현재 작업이 끝나기 전까지 들어온 모든 요청을 pq에 넣어줌
+  - pq가 비어있다면 현재 시간을 다음 요청 시간으로 조정
+  - 비어있지 않다면 pq에 들어있는 요청을 수행 시간이 짧은 순서대로 처리
+3. 전체 시간을 jobs의 수로 나눠서 반환
 
 ```java
 import java.util.Arrays;
