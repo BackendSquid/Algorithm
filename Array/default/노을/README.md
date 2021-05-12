@@ -9,7 +9,7 @@
 - 높이가 각기 다른 기둥 사이에 비가 내렸을 때, 얼마나 많은 물이 쌓였는지 확인하는 문제
 - https://leetcode.com/problems/trapping-rain-water/
 
-![algorithm](C:/Users/psh/Documents/Web/AlgorithmSqaud/Array/default/%EB%85%B8%EC%9D%84/img/algorithm.gif)
+![algorithm](https://github.com/AlgorithmSqaud/Algorithm/blob/main/Array/default/%EB%85%B8%EC%9D%84/img/algorithm.gif?raw=true)
 
 ### 풀이1. 투 포인터 이용
 
