@@ -6,7 +6,7 @@
 
 ## 멤버
 
-- Roach(tmdgusya), K(PizzaCola-K), Pyro(ghojeong), Noel(sanhee)
+- Roach(tmdgusya), K(PizzaCola-K), Pyro(ghojeong), Noel(sanhee), Jane(janeljs)
 
 ## 기록 도구
 
