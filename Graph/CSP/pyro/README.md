@@ -1,8 +1,9 @@
-# 섬의 개수
+# Back-Tracking
 
-- https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+- 전화 번호 문자 조합: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+- N 과 M : https://www.acmicpc.net/workbook/view/2052
 
-## Back-Tracking(백트래킹)
+## 백트래킹
 
 - 그래프 탐색을 하다가 더 갈 수 없으면 왔던 길을 되돌아가 다른길을 찾는다.
 - DFS 보다 더 광의의 의미를 가진 기법
