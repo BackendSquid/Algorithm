@@ -86,7 +86,8 @@ for i in range(10001):
 
 ## 음수
 
-![image-20210630195555693](C:\Users\jisun\AppData\Roaming\Typora\typora-user-images\image-20210630195555693.png)
+![image](https://user-images.githubusercontent.com/68000537/123981068-00e6a180-d9fd-11eb-815d-3be280625186.png)
+
 
 ```python
 def count_sort(arr):
